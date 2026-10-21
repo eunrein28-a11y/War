@@ -30,10 +30,10 @@ public class Pile extends QueueArray<Card> {
         int count = 0;
         String output = "";
         for(Card card : this){
-            output += card.toString();
+            output += card.toString() + "  ";
             count++;
-            if(count == 9){
-                output += "\n";
+            if(count % 10 == 0){
+                output += System.lineSeparator();
             }
         }
 
