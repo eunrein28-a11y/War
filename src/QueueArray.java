@@ -59,7 +59,7 @@ public class QueueArray<Item> implements Iterable<Item>, Queue<Item>{
             if (head == items.length) {
                 head = 0;
             }
-            if(tail == items.length / 4){
+            if(size == items.length / 4){
                 resize(items.length / 2);
             }
 
@@ -71,7 +71,7 @@ public class QueueArray<Item> implements Iterable<Item>, Queue<Item>{
     private void resize(int capacity) {
         //TODO : Implement the resize method and use it in the correct spots in QueueArray
         Object[] newArray = new Object[capacity];
-        for(int i = 0; i < items.length; i++){
+        for(int i = 0; i < size; i++){
             newArray[i] = items[(head + i) % items.length];
         }
         items = (Item[]) newArray;

@@ -65,11 +65,13 @@ public class War {
             pot.enqueue(one);
             pot.enqueue(two);
             if(one.compareTo(two) < 0){
-                pile2.enqueue(pot.dequeue());
-                pile2.enqueue(pot.dequeue());
+                while(!pot.isEmpty()){
+                    pile2.enqueue(pot.dequeue());
+                }
             } else if(one.compareTo(two) > 0) {
-                pile1.enqueue(pot.dequeue());
-                pile1.enqueue(pot.dequeue());
+                while(!pot.isEmpty()) {
+                    pile1.enqueue(pot.dequeue());
+                }
             }
             else{
                 printWar();

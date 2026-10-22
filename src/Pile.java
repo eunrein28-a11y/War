@@ -15,6 +15,7 @@ public class Pile extends QueueArray<Card> {
             String str = s.next();
             enqueue(new Card(str.charAt(0),str.charAt(1)));
         }
+        s.close();
     }
 
     public String toString() {
